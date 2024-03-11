@@ -1,0 +1,169 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --white: #fff;
+  --text-color: #121214;
+  --title-color: #202024;
+  --primary-color: #065e7c;
+  --secondary-color: #387e96;
+}
+
+body,
+input {
+  font-family: "Mulish", sans-serif;
+}
+
+h1,
+h2 {
+  font-size: 2.4rem;
+  color: var(--title-color);
+}
+
+p,
+placeholder,
+input {
+  font-size: 1.6rem;
+}
+
+p,
+a {
+  color: var(--text-color);
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 1.6rem 2.8rem;
+
+  background: var(--primary-color);
+}
+
+form {
+  width: 100vw;
+}
+
+input {
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+  padding: 1.2rem 1.4rem;
+  font-weight: 600;
+  background: var(--secondary-color);
+  color: var(--white);
+}
+
+input::placeholder {
+  color: var(--white);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.content {
+  display: grid;
+  grid-template-areas:
+    "img"
+    "article"
+    "aside";
+  grid-template-rows: 1fr;
+}
+
+.content img {
+  grid-area: img;
+  min-width: 100%;
+}
+
+.content article {
+  grid-area: article;
+  margin: 3.2rem 2.2rem;
+}
+
+.article-header {
+  margin-bottom: 3.1rem;
+}
+
+.buttons {
+  margin-top: 0.8rem;
+}
+
+button {
+  background: var(--primary-color);
+  border: none;
+  border-radius: 999px;
+  padding: 1.2rem;
+  width: 4rem;
+  height: 4rem;
+  text-align: center;
+}
+
+.content aside {
+  grid-area: aside;
+
+  margin: 0 2.2rem 3.9rem;
+}
+
+aside > h2,
+aside a {
+  margin-bottom: 3.2rem;
+}
+
+figure {
+  display: flex;
+  flex-direction: row;
+
+  gap: 1.6rem;
+}
+
+figure figcaption h2 {
+  font-size: 1.8rem;
+}
+
+figure figcaption p {
+  font-size: 1.4rem;
+}
+
+footer {
+  background: var(--secondary-color);
+  text-align: center;
+  padding: 2.6rem 1.6rem;
+}
+
+footer p {
+  color: var(--white);
+}
+
+@media (min-width: 768px) {
+  .content {
+    grid-template-areas:
+      "img aside"
+      "article aside";
+    grid-template-columns: 1fr 0.5fr;
+    margin: 4.4rem 10rem;
+  }
+
+  .contet img {
+    width: 100%;
+    margin: 3.2rem 2.2rem;
+  }
+}
